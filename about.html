@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Modern Electronics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f9fbfc;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #70B2B2, #9ECFD4);
+      padding: 15px 0;
+      text-align: center;
+      color: white;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #044a4a;
+    }
+
+    .about-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 10%;
+      background-color: #fff;
+      flex-wrap: wrap;
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 320px;
+      padding-right: 40px;
+    }
+
+    .about-text h2 {
+      font-size: 32px;
+      color: #044a4a;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    .about-text button {
+      background-color: #70B2B2;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .about-text button:hover {
+      background-color: #048080;
+      transform: scale(1.05);
+    }
+
+    .about-image {
+      flex: 1;
+      text-align: center;
+      min-width: 320px;
+    }
+
+    .about-image img {
+      width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.5s ease;
+    }
+
+    .about-image img:hover {
+      transform: scale(1.05);
+    }
+
+    .values-section {
+      background: #f1f8f8;
+      padding: 60px 10%;
+      text-align: center;
+    }
+
+    .values-section h3 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #044a4a;
+    }
+
+    .values-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .value-card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      width: 270px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .value-card h4 {
+      color: #048080;
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .value-card p {
+      color: #555;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #70B2B2;
+      color: white;
+      padding: 15px 0;
+      margin-top: 50px;
+      font-size: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Modern Electronics</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="about-section">
+    <div class="about-text">
+      <h2>Welcome to Modern Electronics</h2>
+      <p>
+        At <strong>Modern Electronics</strong>, we bring innovation and technology to your doorstep.
+        With over a decade of excellence, we’ve become a trusted name in delivering high-quality
+        appliances and gadgets that make everyday life simpler and smarter.
+      </p>
+      <p>
+        From stylish kitchen appliances to powerful home electronics, our showroom is designed to give
+        you a hands-on experience of the latest and most reliable brands. Every product we offer is tested,
+        certified, and backed by expert customer care.
+      </p>
+      <button onclick="window.location.href='products.html'">Explore Products</button>
+    </div>
+
+    <div class="about-image">
+      <img src="images/showroom.jpg" alt="Our Showroom">
+    </div>
+  </section>
+
+  <section class="values-section">
+    <h3>Our Values</h3>
+    <div class="values-grid">
+      <div class="value-card">
+        <h4>Quality First</h4>
+        <p>We carefully select each product to ensure the best quality and long-lasting performance.</p>
+      </div>
+      <div class="value-card">
+        <h4>Customer Trust</h4>
+        <p>We’ve built our reputation by delivering transparent, trustworthy, and friendly service.</p>
+      </div>
+      <div class="value-card">
+        <h4>Latest Technology</h4>
+        <p>We always stay updated with modern innovations to bring you the latest in home electronics.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Modern Electronics | Designed with ❤️ for technology lovers
+  </footer>
+</body>
+</html>

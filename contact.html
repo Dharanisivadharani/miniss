@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Modern Electronics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f9fbfc;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #70B2B2, #9ECFD4);
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #044a4a;
+    }
+
+    .contact-header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(to bottom, #9ECFD4, #f9fbfc);
+    }
+
+    .contact-header h2 {
+      font-size: 34px;
+      color: #044a4a;
+      margin-bottom: 10px;
+    }
+
+    .contact-header p {
+      font-size: 17px;
+      color: #444;
+    }
+
+    .contact-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 50px;
+      flex-wrap: wrap;
+      padding: 40px 10%;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 320px;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    .contact-info h3 {
+      color: #048080;
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    .info-item {
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .info-item i {
+      background-color: #70B2B2;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      font-size: 18px;
+    }
+
+    .info-item p {
+      font-size: 16px;
+      color: #444;
+    }
+
+    .contact-form {
+      flex: 1;
+      min-width: 320px;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    .contact-form h3 {
+      color: #048080;
+      margin-bottom: 20px;
+      font-size: 22px;
+      text-align: center;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: border-color 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #70B2B2;
+      outline: none;
+    }
+
+    .contact-form button {
+      background-color: #70B2B2;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .contact-form button:hover {
+      background-color: #048080;
+      transform: scale(1.05);
+    }
+
+    .map {
+      width: 100%;
+      height: 350px;
+      margin: 60px 0 0;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: #70B2B2;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 15px;
+      margin-top: 60px;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>Modern Electronics</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="contact-header">
+    <h2>Contact Us</h2>
+    <p>We’re here to help you! Get in touch with our customer care team for product inquiries, orders, or support.</p>
+  </section>
+
+  <section class="contact-container">
+    <div class="contact-info">
+      <h3>Get In Touch</h3>
+      <div class="info-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <p>123 Electronics Street, Chennai, India</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-phone-alt"></i>
+        <p>+91 98765 43210</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-envelope"></i>
+        <p>support@modernelectronics.com</p>
+      </div>
+      <div class="info-item">
+        <i class="fas fa-clock"></i>
+        <p>Mon – Sat: 9:00 AM to 8:00 PM</p>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3>Send Us a Message</h3>
+      <form onsubmit="event.preventDefault(); alert('Your message has been sent successfully!');">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="text" placeholder="Subject" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <div style="padding: 0 10%; margin-top: 40px;">
+    <iframe
+      class="map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.534067275616!2d80.2325!3d13.0609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267f62d65e24d%3A0x6a4fdee8d6b64e47!2sChennai!5e0!3m2!1sen!2sin!4v1688984721372!5m2!1sen!2sin"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <footer>
+    © 2025 Modern Electronics | Designed with ❤️ for technology lovers
+  </footer>
+</body>
+</html>

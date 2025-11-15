@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart - ShopSmart</title>
+<style>
+body { font-family: Arial, sans-serif; background:#f4f4f4; margin:0; }
+/* Navbar */
+header { background:#fff; padding:15px 50px; display:flex; justify-content:space-between; align-items:center; box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+.logo { font-size:24px; font-weight:bold; color:#007BFF; cursor:pointer; }
+nav ul { list-style:none; display:flex; gap:20px; margin:0; padding:0; }
+nav ul li a { text-decoration:none; color:#333; font-weight:bold; }
+nav ul li a:hover { color:#007BFF; }
+.user-icon { width:35px; height:35px; border-radius:50%; background:#007BFF; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:bold; cursor:pointer; margin-left:10px; }
+/* Cart Container */
+.cart-container { max-width:900px; margin:50px auto; background:#fff; padding:30px; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+.cart-container h2 { text-align:center; color:#007BFF; margin-bottom:20px; }
+.cart-items { margin-bottom:20px; }
+.cart-item { display:flex; align-items:center; gap:15px; padding:10px 0; border-bottom:1px solid #ddd; }
+.cart-item img { width:80px; height:80px; object-fit:cover; border-radius:5px; }
+.cart-item-details { flex:1; }
+.cart-item-details h4 { margin:0; font-size:16px; }
+.cart-item-details p { margin:5px 0; font-weight:bold; color:#333; }
+.remove-btn { background:#ff4d2d; color:#fff; border:none; padding:5px 12px; border-radius:50px; cursor:pointer; }
+.remove-btn:hover { background:#e60000; }
+.checkout-btn { background:#007BFF; color:#fff; border:none; padding:12px 25px; border-radius:50px; cursor:pointer; font-weight:bold; display:block; margin:20px auto; font-size:16px; }
+.checkout-btn:hover { background:#00c6ff; }
+.total-price { font-size:18px; font-weight:bold; text-align:right; margin-top:10px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo" onclick="location.href='index.html'">ShopSmart</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div style="display:flex; align-items:center;">
+    <div class="user-icon" onclick="location.href='profile.html'">U</div>
+    <div class="user-icon">🛒 <span id="cartCount">0</span></div>
+  </div>
+</header>
+
+<div class="cart-container">
+  <h2>Your Cart</h2>
+  <div class="cart-items" id="cartItems"></div>
+  <p class="total-price" id="totalPrice"></p>
+  <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+</div>
+
+<script>
+// Load cart
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+const cartItemsDiv = document.getElementById("cartItems");
+
+function renderCart(){
+  cartItemsDiv.innerHTML = "";
+  if(cart.length === 0){
+    cartItemsDiv.innerHTML = "<p>No items in cart.</p>";
+  } else {
+    cart.forEach((item,index)=>{
+      const div = document.createElement("div");
+      div.className = "cart-item";
+      div.innerHTML = `
+        <img src="${item.img}" alt="${item.name}">
+        <div class="cart-item-details">
+          <h4>${item.name}</h4>
+          <p>₹${item.price.toLocaleString()} x ${item.quantity}</p>
+        </div>
+        <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+      `;
+      cartItemsDiv.appendChild(div);
+    });
+  }
+  updateTotal();
+  updateCartCount();
+}
+
+function removeItem(i){
+  cart.splice(i,1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+}
+
+function updateTotal(){
+  const total = cart.reduce((sum,item)=>sum + item.price*item.quantity,0);
+  document.getElementById("totalPrice").innerText = "Total: ₹" + total.toLocaleString();
+}
+
+function updateCartCount(){
+  const count = cart.reduce((sum,item)=>sum+item.quantity,0);
+  document.getElementById("cartCount").innerText = count;
+}
+
+// Proceed to checkout
+document.getElementById("checkoutBtn").addEventListener("click",()=>{
+  if(cart.length===0){ alert("Cart is empty!"); return; }
+  window.location.href="checkout.html";
+});
+
+renderCart();
+</script>
+</body>
+</html>
